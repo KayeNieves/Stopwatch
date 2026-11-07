@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stopwatch {
+  width: 100%;
+  max-width: 420px;
+  padding: 48px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.display {
+  font-family: "Courier New", monospace;
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 16px;
+  color: #000;
+  background: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  color: #fff;
+  background: #000;
+}
+
+button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.laps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+}
+
+.laps li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid #000;
+}
+
+.laps li:last-child {
+  border-bottom: 1px solid #000;
+}
