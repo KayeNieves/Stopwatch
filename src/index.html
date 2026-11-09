@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <fieldset class="mode-switch">
+    <legend>Timer mode</legend>
+    <label>
+      <input type="radio" name="timer-mode" value="stopwatch" checked>
+      Stopwatch
+    </label>
+    <label>
+      <input type="radio" name="timer-mode" value="study-focus">
+      Study Focus
+    </label>
+  </fieldset>
+
   <main class="stopwatch">
     <h1>Stopwatch</h1>
 
@@ -21,6 +33,27 @@
 
     <ol id="laps" class="laps"></ol>
   </main>
+
+  <section class="study-focus" aria-labelledby="study-focus-title" hidden>
+    <h2 id="study-focus-title">Study Focus</h2>
+
+    <div class="study-focus-settings">
+      <label for="focus-duration">Study time (minutes)</label>
+      <input id="focus-duration" type="number" min="1" step="1" value="25">
+
+      <label for="break-duration">Break time (minutes)</label>
+      <input id="break-duration" type="number" min="1" step="1" value="5">
+    </div>
+
+    <p id="focus-status" role="status">Ready to focus</p>
+    <div id="focus-display" class="display" aria-live="off">25:00</div>
+
+    <div class="controls">
+      <button id="focus-start">Start focus</button>
+      <button id="focus-pause" disabled>Pause</button>
+      <button id="focus-reset">Reset</button>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
