@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <fieldset class="mode-switch">
+    <legend>Timer mode</legend>
+    <label>
+      <input type="radio" name="timer-mode" value="stopwatch" checked>
+      Stopwatch
+    </label>
+    <label>
+      <input type="radio" name="timer-mode" value="study-focus">
+      Study Focus
+    </label>
+  </fieldset>
+
   <main class="stopwatch">
     <h1>Stopwatch</h1>
 
@@ -22,7 +34,7 @@
     <ol id="laps" class="laps"></ol>
   </main>
 
-  <section class="study-focus" aria-labelledby="study-focus-title">
+  <section class="study-focus" aria-labelledby="study-focus-title" hidden>
     <h2 id="study-focus-title">Study Focus</h2>
 
     <div class="study-focus-settings">
