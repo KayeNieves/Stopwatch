@@ -263,18 +263,14 @@ resetFocus();
 
 const stopwatchView = document.querySelector(".stopwatch");
 const studyFocusView = document.querySelector(".study-focus");
-const modeOptions = document.querySelectorAll('input[name="timer-mode"]');
+const modeSelect = document.getElementById("timer-mode");
 
 function updateTimerMode() {
-  const selectedMode = document.querySelector('input[name="timer-mode"]:checked').value;
-  const showStudyFocus = selectedMode === "study-focus";
+  const showStudyFocus = modeSelect.value === "study-focus";
 
   stopwatchView.hidden = showStudyFocus;
   studyFocusView.hidden = !showStudyFocus;
 }
 
-modeOptions.forEach((option) => {
-  option.addEventListener("change", updateTimerMode);
-});
-
+modeSelect.addEventListener("change", updateTimerMode);
 updateTimerMode();
