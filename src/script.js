@@ -260,3 +260,21 @@ focusPauseBtn.addEventListener("click", pauseFocus);
 focusResetBtn.addEventListener("click", resetFocus);
 
 resetFocus();
+
+const stopwatchView = document.querySelector(".stopwatch");
+const studyFocusView = document.querySelector(".study-focus");
+const modeOptions = document.querySelectorAll('input[name="timer-mode"]');
+
+function updateTimerMode() {
+  const selectedMode = document.querySelector('input[name="timer-mode"]:checked').value;
+  const showStudyFocus = selectedMode === "study-focus";
+
+  stopwatchView.hidden = showStudyFocus;
+  studyFocusView.hidden = !showStudyFocus;
+}
+
+modeOptions.forEach((option) => {
+  option.addEventListener("change", updateTimerMode);
+});
+
+updateTimerMode();
